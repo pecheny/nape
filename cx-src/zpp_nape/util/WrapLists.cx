@@ -122,7 +122,7 @@ $(mixin global WrapListNew(T,ListT,IteT, defs, noFinal)
         !!/**
         !! * Length of list.
         !! */
-        #if nape_swc @:isVar #end public var length(get_length,never):Int;
+        #if nape_swc @:isVar #end public var length(get,never):Int;
         //this must truly be inlined for nape_swc.
         #if use_inline
             force_inline function get_length() {

@@ -58,7 +58,7 @@ $(mixin global Flags(F,defs)
         FlagsInit(N,F,I)
         tostring(N)
 
-        #if nape_swc @:isVar #end public static var N(get_`N,never):F;
+        #if nape_swc @:isVar #end public static var N(get,never):F;
         force_inline static function get_`N() {
             if(PR(Flags).F`_`N==null) {
                 PR(Flags).internal = true;
