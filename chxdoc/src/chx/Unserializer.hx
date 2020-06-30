@@ -137,7 +137,7 @@ class Unserializer {
  			if( get(pos) == 103 ) /*g*/
  				break;
  			var k = unserialize();
- 			if( !Std.is(k,String) )
+ 			if( !(k is String) )
  				throw "Invalid object key";
  			var v = unserialize();
  			Reflect.setField(o,k,v);
