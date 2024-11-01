@@ -82,10 +82,10 @@ $(mixin global Stdis(x, t) Std.isOfType(x,t));
 
 $(mixin global TArray(T) TArray<T>);
 $(mixin global newTArray(T,size) {
-    #if flash10 new flash.Vector<T>(size,true) #else new Array<T>() #end;
+    new Array<T>();
 });
 $(mixin global newTArray(T) {
-    #if flash10 new flash.Vector<T>() #else new Array<T>() #end;
+    new Array<T>();
 });
 
 $(mixin global property(name,Type,getter,setter)
