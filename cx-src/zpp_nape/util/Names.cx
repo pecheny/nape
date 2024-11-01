@@ -78,7 +78,7 @@ $(mixin global RELEASE(block)
     #end
 )
 
-$(mixin global Stdis(x, t) #if flash untyped __is__(x,t) #else (x is t) #end);
+$(mixin global Stdis(x, t) Std.isOfType(x,t));
 
 $(mixin global TArray(T) TArray<T>);
 $(mixin global newTArray(T,size) {
