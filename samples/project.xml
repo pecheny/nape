@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+    <meta title="Sample" package="nape.examples" version="1.0.0" company="nape"/>
+    <app main="BasicSimulation"       />
+    <!-- <app main="Constraints"           /> -->
+    <!-- <app main="DestructibleTerrain"   /> -->
+    <!-- <app main="FilteringInteractions" /> -->
+    <!-- <app main="FixedDragging"         /> -->
+    <!-- <app main="MarioGalaxyGravity"    /> -->
+    <!-- <app main="OneWayPlatforms"       /> -->
+    <!-- <app main="PerlinSquares"         /> -->
+    <!-- <app main="Portals"               /> -->
+    <!-- <app main="preloader"             /> -->
+    <!-- <app main="PyramidStressTest"     /> -->
+    <!-- <app main="SoftBodies"            /> -->
+    <!-- <app main="SpatialQueries"        /> -->
+    <!-- <app main="Viewports"             /> -->
+    <!-- <app main="BodyFromGraphic"       /> -->
+
+
+    <window antialiasing="4"/>
+    <window background="#303030" fps="60" />
+    <window background="#303030" fps="60" width="640" height="360" unless="html5"/>
+    <source path="src"/>
+
+    <haxelib name="openfl"/>
+    <haxelib name="nape"/>
+
+    <assets path="cog.png" />
+
+</project>
