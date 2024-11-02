@@ -65,17 +65,10 @@ $(mixin global assert(assertion,errorstr) {
 });
 
 $(mixin global DEBUG(block)
-    #if (!NAPE_RELEASE_BUILD)
-        !!
-        block
-    #end
 );
 
 $(mixin global RELEASE(block)
-    #if NAPE_RELEASE_BUILD
-        !!
         block
-    #end
 )
 
 $(mixin global Stdis(x, t) Std.isOfType(x,t));
