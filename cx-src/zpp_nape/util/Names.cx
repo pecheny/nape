@@ -41,9 +41,15 @@ $(mixin global keep()
 
 $(mixin global class keep $class);
 
+//$(mixin global inline()
+//     #if NAPE_NO_INLINE #else $inline #end
+//);
+
 $(mixin global inline()
      #if NAPE_NO_INLINE #else $inline #end
 );
+
+
 $(mixin global force_inline $inline);
 
 $(mixin global flibopts(N) );
