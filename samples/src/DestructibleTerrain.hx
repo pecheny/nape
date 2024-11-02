@@ -14,6 +14,8 @@ package;
  *
  */
 
+import openfl.geom.Point;
+import openfl.display.Bitmap;
 import nape.geom.AABB;
 import nape.geom.GeomPoly;
 import nape.geom.IsoFunction;
@@ -56,16 +58,15 @@ class DestructibleTerrain extends Template {
         createBorder();
 
         // Initialise terrain bitmap.
-        var bit = new BitmapData(w, h, true, 0);
-        bit.perlinNoise(200, 200, 2, 0x3ed, false, true, BitmapDataChannel.ALPHA, false);
+        var bit = new BitmapData(w, h, false, 0xff000000);
+        bit.perlinNoise(200, 200, 2, 0x3ed, false, true,  openfl.display.BitmapDataChannel.BLUE);
 
         // Create initial terrain state, invalidating the whole screen.
         terrain = new Terrain(bit, 30, 5);
         terrain.invalidate(new AABB(0, 0, w, h), space);
-
         // Create bomb sprite for destruction
         bomb = new Sprite();
-        bomb.graphics.beginFill(0xffffff, 1);
+        bomb.graphics.beginFill(0, 1);
         bomb.graphics.drawCircle(0, 0, 40);
     }
 
@@ -191,10 +192,11 @@ class Terrain {
         var gx = 1-fx;
         var gy = 1-fy;
 
-        var a00 = bitmap.getPixel32(ix,iy)>>>24;
-        var a01 = bitmap.getPixel32(ix,iy+1)>>>24;
-        var a10 = bitmap.getPixel32(ix+1,iy)>>>24;
-        var a11 = bitmap.getPixel32(ix+1,iy+1)>>>24;
+        var a00 = bitmap.getPixel32(ix,iy)&0xff;
+        var a01 = bitmap.getPixel32(ix,iy+1)&0xff;
+        var a10 = bitmap.getPixel32(ix+1,iy)&0xff;
+        var a11 = bitmap.getPixel32(ix+1,iy+1)&0xff;
+
 
         var ret = gx*gy*a00 + fx*gy*a10 + gx*fy*a01 + fx*fy*a11;
         return 0x80-ret;
