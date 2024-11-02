@@ -37,8 +37,8 @@ $(mixin global inv(x) zip_`x);
 $(mixin global elif() else if);
 
 $(mixin global keep()
-    #if nape_swc @:$keep #end
 );
+
 $(mixin global class keep $class);
 
 $(mixin global inline()
@@ -46,10 +46,10 @@ $(mixin global inline()
 );
 $(mixin global force_inline $inline);
 
-$(mixin global flibopts(N) #if flib @:$keep function flibopts_`N(){} #end);
+$(mixin global flibopts(N) );
 
-$(mixin global flibmdel #if NAPE_NO_INLINE #elseif (flash9&&flib) @:ns("flibdel") #end);
-$(mixin global flibdel(n) #if NAPE_NO_INLINE #elseif (flash9&&flib) @:$keep var flibdel_`n:Void->Void; #end);
+$(mixin global flibmdel );
+$(mixin global flibdel(n));
 //$(mixin global flibstaticdel(n) #if NAPE_NO_INLINE #elseif (flash9&&flib) @:$keep static var flibdel_`n:Void->Void; #end);
 $(mixin global flibstaticdel(x) $(->));
 $(mixin global assert(assertion,errorstr) {
