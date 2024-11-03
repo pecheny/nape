@@ -45,9 +45,8 @@ $(mixin global class keep $class);
 //     #if NAPE_NO_INLINE #else $inline #end
 //);
 
-$(mixin global inline()
-     #if NAPE_NO_INLINE #else $inline #end
-);
+// $(mixin global inline() ` #if NAPE_NO_INLINE #else $inline #end );
+$(mixin global inline() $inline );
 
 
 $(mixin global force_inline $inline);
