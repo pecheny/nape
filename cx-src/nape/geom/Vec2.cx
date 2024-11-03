@@ -97,8 +97,7 @@ $(import);
         if (ret.pr(inner) == null) {
             ret.pr(inner) = PR(Vec2).get(x, y);
             ret.pr(inner).outer = ret;
-        }else
-        {
+        } else {
             ret.setxy(x, y);
         }
 
@@ -254,9 +253,7 @@ $(import);
     !! *               an argument to any Nape function. (default false)
     !! * @return       The possibly weak Vec2 allocated with given polar values.
     !! */
-    keep public static function fromPolar(
-        length:Float, angle:Float, weak:Bool = false
-    ):Vec2 {
+    keep public static function fromPolar( length:Float, angle:Float, weak:Bool = false):Vec2 {
         DEBUG(
             if (isNaN(length)) {
                 throw "Error: Vec2::length cannot be NaN";
